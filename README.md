@@ -149,8 +149,6 @@ CRON_SECRET=
 
 Replace the placeholder values with your real credentials. You can get these by signing up at: [**Clerk**](https://jsm.dev/skew-clerk), [**Supabase**](https://jsm.dev/skew-supabase), [**Oxylabs**](https://oxylabs.io/javascript), [**OpenAI**](https://platform.openai.com/), [**PostHog**](https://jsm.dev/skew-posthog).
 
-> **Note:** `CLERK_SECRET_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `OXY_WSA_USERNAME` / `OXY_WSA_PASSWORD`, `OPENAI_API_KEY`, and `BIASLY_ADMIN_SECRET` are server-only and must never reach browser code. Only `NEXT_PUBLIC_*` variables are safe on the client.
-
 **Set Up the Database**
 
 - Open the Supabase dashboard, go to the SQL editor
@@ -192,16 +190,6 @@ curl -X POST http://localhost:3000/api/oxylabs/schedules \
 ```
 
 This registers one Oxylabs schedule per active source. `vercel.json` schedules `/api/cron/pipeline` for 15 minutes past every hour — Vercel Cron only runs once deployed, and the route is protected in production by a `CRON_SECRET` set in your Vercel project settings (not in `.env.local`).
-
-## Available Scripts
-
-| Command             | Description                     |
-| -------------------- | -------------------------------- |
-| `npm run dev`        | Start the Next.js development server |
-| `npm run build`      | Build for production             |
-| `npm run start`      | Start the production server      |
-| `npm run lint`       | Run ESLint                       |
-| `npm run typecheck`  | Run the TypeScript compiler check |
 
 ## <a name="links">🔗 Assets</a>
 
